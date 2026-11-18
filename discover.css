@@ -1,0 +1,169 @@
+/* discover.css - swipe card styles */
+
+.deck {
+  position:relative;
+  height:min(600px,78vh);
+  max-width:380px;
+  margin:0 auto 14px;
+  touch-action:pan-y;
+  outline-offset:6px;
+}
+
+.sw {
+  position:absolute;
+  inset:0;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 8px 24px rgba(10,47,115,.12);
+  user-select:none;
+  -webkit-user-select:none;
+  cursor:grab;
+  will-change:transform;
+}
+
+.sw.back {
+  transform:scale(.95) translateY(12px);
+  pointer-events:none;
+  opacity:.7;
+}
+
+.sw .ph {
+  height:150px;
+  flex:none;
+}
+
+.sw .cb {
+  overflow:auto;
+  gap:7px;
+}
+
+.pct {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  background:var(--gold);
+  color:var(--goldink);
+  font-weight:800;
+  border-radius:99px;
+  padding:4px 11px;
+}
+
+.why {
+  font-size:14px;
+  margin:0;
+}
+
+.unv {
+  font-size:13px;
+  color:var(--goldink);
+  background:#fff6d9;
+  border-radius:8px;
+  padding:6px 8px;
+  margin:0;
+}
+
+.stamp {
+  position:absolute;
+  top:18px;
+  font:800 26px 'Bricolage Grotesque';
+  border:3px solid;
+  border-radius:8px;
+  padding:2px 10px;
+  opacity:0;
+  pointer-events:none;
+  z-index:2;
+}
+
+.stamp.l {
+  left:16px;
+  color:#0a8a3a;
+  transform:rotate(-12deg);
+}
+
+.stamp.p {
+  right:16px;
+  color:#c0392b;
+  transform:rotate(12deg);
+}
+
+.dact {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:8px;
+}
+
+.dact button {
+  border:1.5px solid var(--line);
+  background:var(--card);
+  border-radius:99px;
+  padding:9px 14px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.dact button:disabled {
+  opacity:.4;
+  cursor:default;
+}
+
+.saved {
+  max-width:640px;
+  margin:14px auto 0;
+}
+
+.saved summary {
+  cursor:pointer;
+  font-weight:600;
+}
+
+.saved .it {
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  padding:8px 0;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+
+.pf {
+  display:grid;
+  gap:10px;
+}
+
+.pf .r {
+  display:grid;
+  grid-template-columns:1fr 130px;
+  gap:8px;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+  padding:6px 0;
+  font-size:14px;
+}
+
+.pf .g2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.pf label {
+  font-weight:600;
+  font-size:13px;
+  display:grid;
+  gap:3px;
+}
+
+.mbox {
+  background:#eef4fd;
+  border-radius:12px;
+  padding:12px;
+  display:grid;
+  gap:6px;
+}
+

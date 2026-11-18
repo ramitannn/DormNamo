@@ -1,0 +1,75 @@
+/* ui.css - full-page screens (login, questionnaire), account menu, toasts, polish */
+body.lock { overflow: hidden; }
+.overlay { position: fixed; inset: 0; z-index: 100; background: var(--bg); display: flex; flex-direction: column; overflow: auto; }
+.ov-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-bottom: 2px solid var(--ink); }
+.ov-logo { font: 800 26px 'Bricolage Grotesque', sans-serif; color: var(--brand); }
+.ov-body { flex: 1; display: grid; place-items: center; padding: 24px 16px 40px; }
+.ov-card { width: min(460px, 100%); border: 2px solid var(--ink); border-radius: 22px; padding: 22px; display: grid; gap: 12px; background: var(--card); box-shadow: 8px 8px 0 var(--line); }
+.ov-card.wide { width: min(560px, 100%); }
+.ov-card h1 { font-size: 28px; }
+.ov-sub { margin: 0; color: var(--mute); }
+.ov-art { height: 110px; border: 2px solid var(--ink); border-radius: 14px; display: grid; place-items: center; font-size: 52px; background: #eef4fd; }
+.ov-card label, .lab { font-size: 14px; font-weight: 600; display: grid; gap: 5px; }
+.ov-card input[type=range] { accent-color: var(--brand); }
+.err { color: #b3261e; font-size: 14px; min-height: 1.3em; margin: 0; }
+.linkbtn { background: none; border: 0; color: var(--brand); font-weight: 600; cursor: pointer; text-decoration: underline; padding: 6px; }
+.btn.big { padding: 13px 22px; font-size: 17px; border-radius: 12px; }
+
+/* progress + step animation */
+.prog { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; }
+.prog i { display: block; height: 100%; background: var(--brand); border-radius: 99px; transition: width .35s ease; }
+.ob-step { display: grid; gap: 12px; animation: slideIn .3s ease; }
+.ob-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 4px; }
+.ob-nav .btn:only-child { margin-left: auto; }
+@keyframes slideIn { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
+
+/* segmented controls */
+.seg { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg button { border: 1.5px solid var(--line); background: transparent; border-radius: 99px; padding: 8px 14px; font-weight: 600; cursor: pointer; transition: all .15s; }
+.seg button:hover { border-color: var(--brand); }
+.seg button[aria-pressed=true] { background: var(--brand); border-color: var(--brand); color: var(--on); transform: scale(1.03); }
+.seg button.m0[aria-pressed=true] { background: var(--mute); border-color: var(--mute); }
+.seg button.m1[aria-pressed=true] { background: var(--gold); border-color: var(--gold); color: var(--goldink); }
+.seg.sm button { padding: 5px 10px; font-size: 13px; }
+.pri { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 0; border-top: 1px solid var(--line); font-weight: 600; }
+.summary h3 { font-size: 16px; margin: 10px 0 6px; }
+.chip.on { background: var(--brand); color: var(--on); border-color: var(--brand); cursor: default; }
+
+/* account menu */
+.acct { position: relative; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; border: 0; background: var(--brand); color: var(--on); font-weight: 800; cursor: pointer; transition: transform .15s; }
+.avatar:hover { transform: scale(1.08); }
+.menu { position: absolute; right: 0; top: 46px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px; display: grid; gap: 6px; min-width: 210px; box-shadow: 0 10px 30px rgba(10, 47, 115, .18); z-index: 40; }
+.menu small { color: var(--mute); }
+.menu button { text-align: left; border: 0; background: none; padding: 8px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.menu button:hover { background: var(--line); }
+
+/* toast */
+#toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 99px; opacity: 0; pointer-events: none; transition: all .25s; z-index: 120; font-weight: 600; }
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* swipe deck with action rail (matches the sketch) */
+.deckwrap { display: flex; justify-content: center; align-items: center; gap: 16px; }
+.deckwrap .deck { flex: 1 1 380px; margin: 0; }
+.rail { display: grid; gap: 12px; }
+.rail > button, .more > summary { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--ink); background: var(--card); font-size: 22px; cursor: pointer; display: grid; place-items: center; list-style: none; transition: transform .15s, background .15s; }
+.rail > button:hover, .more > summary:hover { transform: scale(1.1); background: #eef4fd; }
+.rail > button:active { transform: scale(.92); }
+#dLike:not(:disabled):hover { background: #ffe3e8; }
+.rail > button:disabled { opacity: .35; cursor: default; transform: none; }
+.more { position: relative; } .more > summary::-webkit-details-marker { display: none; }
+.more .pop { position: absolute; right: 60px; bottom: 0; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 6px; display: grid; gap: 2px; min-width: 150px; box-shadow: 0 10px 30px rgba(10, 47, 115, .18); z-index: 5; }
+.more .pop button { text-align: left; border: 0; background: none; padding: 9px 10px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.more .pop button:hover:not(:disabled) { background: var(--line); } .more .pop button:disabled { opacity: .4; }
+@media (max-width: 520px) { .deckwrap { gap: 8px; } .rail > button, .more > summary { width: 44px; height: 44px; font-size: 18px; } }
+
+/* general polish */
+header { backdrop-filter: blur(8px); background: rgba(255, 255, 255, .9); }
+.btn { transition: transform .15s, box-shadow .15s, opacity .15s; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(10, 71, 169, .25); }
+.btn:active:not(:disabled) { transform: translateY(0); }
+.btn:disabled { opacity: .45; cursor: default; }
+.card { transition: transform .2s, box-shadow .2s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(10, 47, 115, .14); }
+dialog[open] { animation: pop .2s ease; } @keyframes pop { from { opacity: 0; transform: scale(.96); } }
+@media (prefers-reduced-motion: reduce) { *, *:before, *:after { animation: none !important; transition: none !important; } }
