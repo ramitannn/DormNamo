@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DormNamo – Your Home Away From Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/chat.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/discover.css">
+</head>
+<body data-page="home">
+<header id="siteHeader"></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div class="fc a" aria-hidden="true">🛏️ ₱1,100<small>0.5 km to campus</small></div>
+<div class="fc b" aria-hidden="true">📶 Wi-Fi + 💧 water<small>94% match</small></div>
+<div class="fc c" aria-hidden="true">⭐ 4.6<small>from 38 tenants</small></div>
+<span class="kicker">🎓 Rooms near MSU-IIT &amp; more</span>
+<h1>Find a room that feels like <span class="scribble">home</span>.</h1>
+<p class="lead">Compare boarding houses and dorms by price, distance and what tenants actually say, without visiting every one.</p>
+<form class="pill" id="quick" aria-label="Quick search">
+<label>Where<select id="qNear"></select></label><span class="sep"></span>
+<label>Budget<select id="qBudget"><option value="99999">Any budget</option><option value="1000">Up to ₱1,000</option><option value="1500">Up to ₱1,500</option><option value="2500">Up to ₱2,500</option><option value="4000">Up to ₱4,000</option></select></label><span class="sep"></span>
+<label>Room type<select id="qType"><option value="">Any type</option></select></label>
+<button class="go" type="submit"><span aria-hidden="true">🔍</span> Search</button>
+</form>
+<div class="stats"><div><b id="sCount">0</b>listings</div><div><b id="sVer">0</b>verified</div><div><b id="sMin">₱0</b>cheapest a month</div></div>
+</div></div>
+<section id="finder"><div class="wrap">
+<div class="sh"><div><h2>Find your room</h2><p>Sample listings for demonstration. Prices, owners, and reviews are placeholders.</p></div></div>
+<div class="finder">
+<aside class="filters" aria-label="Filters">
+<h3>Filters</h3>
+<label>Search by name or area<input type="text" id="fQ" placeholder="e.g. Carmen"></label>
+<label>Near<select id="fNear"></select></label>
+<label>Max price: <span id="fPv">₱4,000</span><input type="range" id="fP" min="500" max="6000" step="100" value="4000"></label>
+<div><div style="font-size:14px;font-weight:600;margin-bottom:6px">Room type</div><div class="chips" id="fTypes"></div></div>
+<div><div style="font-size:14px;font-weight:600;margin-bottom:6px">Must have</div><div class="chips" id="fAm"></div></div>
+<label class="chk"><input type="checkbox" id="fV"> Verified listings only</label>
+<button class="btn alt sm" id="reset" type="button">Clear filters</button>
+</aside>
+<div>
+<div class="bar"><span id="res" aria-live="polite"></span><label>Sort <select id="sort"><option value="rec">Recommended</option><option value="pa">Price: low to high</option><option value="pd">Price: high to low</option><option value="rt">Top rated</option><option value="ds">Nearest to school</option></select></label></div>
+<div class="grid" id="grid"></div>
+</div>
+</div>
+</div></section>
+
+<section id="why" style="background:var(--card)"><div class="wrap">
+<div class="sh"><div><h2>Finding a BH shouldn’t be this hard</h2><p>Here’s what students and workers told us slows them down, and what DormNamo does about it.</p></div></div>
+<div class="problem">
+<div><b>Unreliable info</b>Outdated or misleading posts. We ask owners to keep rates and availability current.</div>
+<div><b>Hard to compare</b>Prices and facilities in one view. Pick up to three listings and compare side by side.</div>
+<div><b>Unknown location</b>Every listing shows distance to nearby schools and what’s around it.</div>
+<div><b>Time and fare costs</b>Check photos, rates, and tenant reviews before you spend on a visit.</div>
+<div><b>Is it legit and safe?</b>Verified badges show that DormNamo checked the property and the owner.</div>
+<div><b>Owners can’t reach tenants</b>A simple way to list rooms and be found by people who need them.</div>
+</div>
+<h3 style="margin:36px 0 14px;font-size:24px">Made for</h3>
+<div class="who">
+<div><b>College students</b><br><span class="meta">Studying away from home and watching every peso.</span></div>
+<div><b>Incoming freshmen</b><br><span class="meta">New to the city and need a place near school.</span></div>
+<div><b>Working professionals</b><br><span class="meta">Relocating for a job.</span></div>
+<div><b>Interns and reviewees</b><br><span class="meta">Short stays for internships, exams, and review programs.</span></div>
+<div><b>Owners and landlords</b><br><span class="meta">Advertise open rooms and attract tenants.</span></div>
+</div>
+</div></section>
+
+<section id="owners"><div class="wrap">
+<div class="sh"><div><h2>Own a boarding house? List it here.</h2><p>Basic listings are free. Pay only if you want more visibility.</p></div></div>
+<div class="plans">
+<div class="plan"><h3>Basic</h3><div class="price">Free</div><ul><li>One listing with photos and rates</li><li>Contact details shown to tenants</li><li>Tenant reviews</li></ul></div>
+<div class="plan pop"><h3>Featured listing</h3><div class="price">Pay per boost</div><ul><li>Shown first in search results</li><li>Gold “Featured” label</li><li>Great for filling rooms before the semester</li></ul></div>
+<div class="plan"><h3>Owner subscription</h3><div class="price">Monthly or yearly</div><ul><li>Multiple properties</li><li>Premium placement and promotions</li><li>Verification priority</li></ul></div>
+</div>
+<form class="owner" id="addForm">
+<h3>Add your property (demo)</h3>
+<label>Property name<input type="text" id="aN" required></label>
+<label>Area<input type="text" id="aA" required placeholder="e.g. Lapasan"></label>
+<label>Monthly rent (₱)<input type="number" id="aP" min="300" required></label>
+<label>Room type<select id="aT"></select></label>
+<label>Contact number<input type="tel" id="aC" required placeholder="09XX XXX XXXX"></label>
+<label>Near<select id="aS"></select></label>
+<label class="full">Short description<textarea id="aD" rows="2"></textarea></label>
+<div class="full"><button class="btn" type="submit">Add listing</button> <span id="aMsg" class="meta" aria-live="polite"></span></div>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap">DormNamo · Your Home Away From Home. A student project by Team Gwapo (CCC100). Listings shown are sample data.</div></footer>
+
+<div class="cmpbar" id="cmpbar" hidden><span id="cmpTxt"></span><button class="btn sm" id="cmpGo">Compare</button><button class="btn sm" id="cmpClr" style="background:transparent;color:inherit;border:1px solid currentColor">Clear</button></div>
+<dialog id="dlg"></dialog>
+
+<div class="overlay" id="auth" hidden></div>
+<div class="overlay" id="ob" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/details.js"></script>
+<script src="js/browse.js"></script>
+<script src="js/matching.js"></script>
+<script src="js/twotower.js"></script>
+<script src="js/state.js"></script>
+<script src="js/accounts.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

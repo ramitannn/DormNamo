@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Discover · DormNamo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/chat.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/discover.css">
+</head>
+<body data-page="discover" class="dark">
+<header id="siteHeader"></header>
+<main class="dpage">
+<div class="dhead"><h1>For you</h1><button class="btn alt sm" id="dPref" type="button">⚙️ Edit preferences</button></div>
+<div class="deckwrap">
+<div class="deck" id="deck" tabindex="0" aria-label="Dorm recommendations. Arrow right to like, left to pass, up for details, Z to undo."></div>
+<div class="rail">
+<button id="dLike" type="button" aria-label="Like" title="Like (→)">♥</button>
+<button id="dInfo" type="button" aria-label="Details and ask landlord" title="Details (↑)">💬</button>
+<details class="more"><summary aria-label="More actions">•••</summary><div class="pop"><button id="dMark" type="button">☆ Bookmark</button><button id="dPass" type="button">✕ Pass</button><button id="dUndo" type="button">↶ Undo</button></div></details>
+</div></div>
+<div class="meta" id="dStat" style="text-align:center;margin-top:10px;position:relative" aria-live="polite"></div>
+<details class="saved" style="position:relative"><summary>Liked &amp; bookmarked</summary><div id="dSaved"></div></details>
+</main>
+<div class="overlay" id="auth" hidden></div>
+<div class="overlay" id="ob" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="dlg"></dialog>
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/details.js"></script>
+<script src="js/matching.js"></script>
+<script src="js/twotower.js"></script>
+<script src="js/state.js"></script>
+<script src="js/discover.js"></script>
+<script src="js/accounts.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
